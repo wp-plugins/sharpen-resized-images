@@ -10,7 +10,7 @@ Sharpening resized jpg images.
 
 This plugin sharpening resized jpg images. You can check screenshot as an example of difference. No settings required. 
 
-**Important:** This plugin does NOT affect to uploaded images. It will affect to resized images after you enabled it.
+**Important:** This plugin does NOT affect to uploaded images. It will affect to new uploads after you enabled it.
 
 == Installation ==
 
