@@ -2,10 +2,10 @@
 /*
 Plugin Name: Sharpen Resized Images
 Plugin URI: http://unsalkorkmaz.com/ajx-sharpen-resized-images/
-Description: This plugin sharpening resized jpg images. You can check screenshot as an example of difference. No settings required.
+Description: This plugin sharpening resized jpg image uploads in your WordPress. No settings required.
 Author: Ünsal Korkmaz
 Author URI: http://unsalkorkmaz.com/
-Version: 1.0
+Version: 1.1
 */ 
 
 
@@ -38,6 +38,10 @@ function ajx_sharpen_resized_files( $resized_file ) {
 		case IMAGETYPE_GIF:
 			return $resized_file;
 	}
+
+	// we don't need images in memory anymore
+	imagedestroy( $image );
+	imagedestroy( $resized_file );
 	
 	return $resized_file;
 }	
