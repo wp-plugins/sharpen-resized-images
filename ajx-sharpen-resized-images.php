@@ -39,9 +39,6 @@ function ajx_sharpen_resized_files( $resized_file ) {
 			return $resized_file;
 	}
 
-	// we don't need images in memory anymore
-	imagedestroy( $image );
-	
 }	
 	
 add_filter('image_make_intermediate_size', 'ajx_sharpen_resized_files',900);
