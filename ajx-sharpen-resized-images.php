@@ -5,7 +5,7 @@ Plugin URI: http://unsalkorkmaz.com/ajx-sharpen-resized-images/
 Description: This plugin sharpening resized jpg image uploads in your WordPress. No settings required.
 Author: Ünsal Korkmaz
 Author URI: http://unsalkorkmaz.com/
-Version: 1.2
+Version: 1.2.1
 */ 
 
 
