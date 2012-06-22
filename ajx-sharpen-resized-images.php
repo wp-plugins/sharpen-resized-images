@@ -5,7 +5,7 @@ Plugin URI: http://unsalkorkmaz.com/ajx-sharpen-resized-images/
 Description: This plugin sharpening resized jpg image uploads in your WordPress. No settings required.
 Author: Ünsal Korkmaz
 Author URI: http://unsalkorkmaz.com/
-Version: 1.1
+Version: 1.2
 */ 
 
 
@@ -23,9 +23,9 @@ function ajx_sharpen_resized_files( $resized_file ) {
 	switch ( $orig_type ) {
 		case IMAGETYPE_JPEG:
 			$matrix = array(
-				array(-1, -1, -1),
-				array(-1, 16, -1),
-				array(-1, -1, -1),
+				array(-1.2, -1, -1.2),
+				array(-1, 20, -1),
+				array(-1.2, -1, -1.2),
 			);
 
 			$divisor = array_sum(array_map('array_sum', $matrix));
@@ -41,9 +41,7 @@ function ajx_sharpen_resized_files( $resized_file ) {
 
 	// we don't need images in memory anymore
 	imagedestroy( $image );
-	imagedestroy( $resized_file );
 	
-	return $resized_file;
 }	
 	
 add_filter('image_make_intermediate_size', 'ajx_sharpen_resized_files',900);
