@@ -12,7 +12,7 @@ This plugin sharpening resized jpg image uploads in your WordPress. You can chec
 
 **Important:** This plugin does NOT affect to uploaded images. It will affect to new uploads after you enabled it.
 
-You can check some examples in [Support Forum](http://wordpress.org/support/topic/plugin-sharpen-resized-images-examples)
+You can check some examples in [Support Forum](http://wordpress.org/support/topic/plugin-sharpen-resized-images-examples?replies=1)
 
 == Installation ==
 
@@ -26,7 +26,7 @@ See [Installing Plugins](http://codex.wordpress.org/Managing_Plugins#Installing_
 
 = 1.3 =
 * filters added for users want to change sharpening style
-* Check examples: http://wordpress.org/support/topic/plugin-sharpen-resized-images-examples
+* Check examples: http://wordpress.org/support/topic/plugin-sharpen-resized-images-examples?replies=1
 
 = 1.2.1 =
 * an error fix. 
