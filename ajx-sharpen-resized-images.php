@@ -5,10 +5,29 @@ Plugin URI: http://unsalkorkmaz.com/ajx-sharpen-resized-images/
 Description: This plugin sharpening resized jpg image uploads in your WordPress. No settings required.
 Author: Ünsal Korkmaz
 Author URI: http://unsalkorkmaz.com/
-Version: 1.2.1
+Version: 1.3
+License: GPL v3
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */ 
 
-
+/*
+filter usage:
+add_filter('sharpen_resized_corner',function(){ return -1.2; });
+add_filter('sharpen_resized_side',function(){ return -1; });
+add_filter('sharpen_resized_center',function(){ return 20; });
+*/
 function ajx_sharpen_resized_files( $resized_file ) {
 
 	$image = wp_load_image( $resized_file );
@@ -23,9 +42,9 @@ function ajx_sharpen_resized_files( $resized_file ) {
 	switch ( $orig_type ) {
 		case IMAGETYPE_JPEG:
 			$matrix = array(
-				array(-1.2, -1, -1.2),
-				array(-1, 20, -1),
-				array(-1.2, -1, -1.2),
+				array(apply_filters('sharpen_resized_corner',-1.2), apply_filters('sharpen_resized_side',-1), apply_filters('sharpen_resized_corner',-1.2)),
+				array(apply_filters('sharpen_resized_side',-1), apply_filters('sharpen_resized_center',20), apply_filters('sharpen_resized_side',-1)),
+				array(apply_filters('sharpen_resized_corner',-1.2), apply_filters('sharpen_resized_side',-1), apply_filters('sharpen_resized_corner',-1.2)),
 			);
 
 			$divisor = array_sum(array_map('array_sum', $matrix));
