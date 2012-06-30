@@ -14,6 +14,8 @@ This plugin sharpening resized jpg image uploads in your WordPress. You can chec
 
 You can check some examples in [Support Forum](http://wordpress.org/support/topic/plugin-sharpen-resized-images-examples?replies=1)
 
+Sponsored by: [FirmaSite](http://firmasite.com/)
+
 == Installation ==
 
 See [Installing Plugins](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins).
