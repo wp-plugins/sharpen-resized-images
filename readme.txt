@@ -2,8 +2,8 @@
 Contributors: unsalkorkmaz
 Tags: resized, thumbnail, image, sharpen, upload
 Requires at least: 3.0
-Tested up to: 3.4
-Stable tag: 1.3
+Tested up to: 3.5
+Stable tag: 1.4
 
 Do you realize your resized images looks blur? This plugin fixing it. Sharpening resized jpg image uploads in your WordPress.
 == Description ==
@@ -25,6 +25,10 @@ See [Installing Plugins](http://codex.wordpress.org/Managing_Plugins#Installing_
 1. Difference
 
 == Changelog ==
+
+= 1.4 =
+* Added 3.5 support
+* Plugin still using GD library. I will add imagick support for wp3.5 in next release
 
 = 1.3 =
 * filters added for users want to change sharpening style

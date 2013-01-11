@@ -5,7 +5,7 @@ Plugin URI: http://unsalkorkmaz.com/ajx-sharpen-resized-images/
 Description: This plugin sharpening resized jpg image uploads in your WordPress. No settings required.
 Author: Ünsal Korkmaz
 Author URI: http://unsalkorkmaz.com/
-Version: 1.3
+Version: 1.4
 License: GPL v3
 
 This program is free software: you can redistribute it and/or modify
@@ -24,16 +24,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /*
 filter usage:
-add_filter('sharpen_resized_corner',function(){ return -1.2; });
-add_filter('sharpen_resized_side',function(){ return -1; });
-add_filter('sharpen_resized_center',function(){ return 20; });
+	add_filter('sharpen_resized_corner',function(){ return -1.2; });
+	add_filter('sharpen_resized_side',function(){ return -1; });
+	add_filter('sharpen_resized_center',function(){ return 20; });
 */
 function ajx_sharpen_resized_files( $resized_file ) {
-
-	$image = wp_load_image( $resized_file );
-	if ( !is_resource( $image ) )
-		return new WP_Error( 'error_loading_image', $image, $file );
-
+	
+	$image = imagecreatefromstring( file_get_contents( $resized_file ) );
+	
 	$size = @getimagesize( $resized_file );
 	if ( !$size )
 		return new WP_Error('invalid_image', __('Could not read image size'), $file);
@@ -56,8 +54,8 @@ function ajx_sharpen_resized_files( $resized_file ) {
 			return $resized_file;
 		case IMAGETYPE_GIF:
 			return $resized_file;
-	}
-
+	}	
+	
 	// we don't need images in memory anymore
 	imagedestroy( $image );
 	
